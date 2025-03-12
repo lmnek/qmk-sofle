@@ -7,4 +7,5 @@ git submodule add https://github.com/lmnek/qmk-sofle keyboards/sofle/keymaps/lmn
 Compile/flash the layout:
 ```
 qmk compile -kb sofle/rev1 -km lmnk
+qmk flash -kb sofle/rev1 -km lmnk
 ```
