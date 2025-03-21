@@ -6,8 +6,8 @@ static void print_status_narrow(void) {
 
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
-        oled_write_ln_P(PSTR("b e"), false);
-        break;
+            oled_write_ln_P(PSTR("base"), false);
+            break;
         case _CHARS:
             oled_write_ln_P(PSTR("chars"), false);
             break;
@@ -41,7 +41,7 @@ bool oled_task_user(void) {
     if (is_keyboard_master()) {
         print_status_narrow();
     } else {
-        // render_logo();
+        /*oled_write_P(arasaka_logo, false);*/
     }
     return false;
 }
