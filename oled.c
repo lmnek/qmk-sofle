@@ -17,6 +17,12 @@ static void print_status_narrow(void) {
         case _NUMPAD:
             oled_write_ln_P(PSTR("num"), false);
             break;
+        case _CZ_LOW:
+            oled_write_ln_P(PSTR("cz"), false);
+            break;
+        case _CZ_UP:
+            oled_write_ln_P(PSTR("CZ"), false);
+            break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
     }
