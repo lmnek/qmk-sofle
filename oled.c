@@ -1,4 +1,5 @@
 #include "luna.c"
+#include "bongocat.c"
 
 static void print_status_narrow(void) {
     oled_write_P(PSTR("\n\n"), false);
@@ -37,7 +38,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     if (is_keyboard_master()) {
         return OLED_ROTATION_270;
     }
-    return rotation;
+    return OLED_ROTATION_180;
 }
 
 bool oled_task_user(void) {
@@ -47,7 +48,7 @@ bool oled_task_user(void) {
     if (is_keyboard_master()) {
         print_status_narrow();
     } else {
-        /*oled_write_P(arasaka_logo, false);*/
+        render_anim_bongocat();
     }
     return false;
 }
